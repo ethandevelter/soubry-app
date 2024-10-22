@@ -15,6 +15,7 @@ class NewTableCreator extends Component
     public $fields = [];
     public $field = [];
     public $newField = "";
+    public $typeField = "";
     public $tableName = "";
 
     public function mount()
@@ -58,6 +59,7 @@ class NewTableCreator extends Component
                 Field::create([
                     'record_id' => $newRecord->id,
                     'field_name' => $field->field_name,
+                    'fiel_type' => $field->field_type,
                     'field_value' => $field->field_value, // You can assign default values if needed
                 ]);
             }
@@ -72,7 +74,8 @@ class NewTableCreator extends Component
             Field::create([
                 'record_id' => $record->id,
                 'field_name' => $this->newField,
-                'field_value' => 'default_value',
+                'field_type' => $this->typeField,
+                'field_value' => '',
             ]);
         }
         $this->showItems();

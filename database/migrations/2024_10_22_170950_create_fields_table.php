@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('record_id')->constrained('records')->onDelete('cascade');
             $table->string('field_name');
+            $table->string('field_type');
             $table->text('field_value')->nullable();
             $table->timestamps();
         });

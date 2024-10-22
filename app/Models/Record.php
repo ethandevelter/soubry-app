@@ -11,6 +11,11 @@ class Record extends Model
     
     protected $fillable = ['table_id'];
 
+    public function table()
+    {
+        return $this->belongsTo(Table::class);
+    }
+
     // Relationship with Field model
     public function fields()
     {

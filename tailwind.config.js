@@ -19,6 +19,9 @@ export default {
                 sofia: ['sofia-pro', ...defaultTheme.fontFamily.sans],
                 atyp: ['atyp-bl-variable', ...defaultTheme.fontFamily.sans],
             },
+            fontSize: {
+                '12px': '12px',
+            },
             borderRadius: {
                 '45px': '45px',
             },

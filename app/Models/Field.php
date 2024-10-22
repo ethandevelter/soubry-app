@@ -9,7 +9,7 @@ class Field extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['record_id', 'field_name', 'field_value'];
+    protected $fillable = ['record_id', 'field_name', 'field_type', 'field_value'];
 
     // Relationship with Record model (if needed)
     public function record()
