@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+body {
+    font-family: "sofia-pro", 'sans-serif';
+    letter-spacing: -0.8px;
+}
+.main_input {
+    @apply font-sofia text-sm font-light text-black bg-white px-4 py-2.5 rounded-3xl border-none outline-none shadow-none;
+}
+.main_input.alt {
+    border: 1px solid rgba(188, 187, 187, 0.671);
+}
+.main_btn {
+    @apply font-sofia text-sm font-light text-white bg-blue-600 px-4 py-2.5 rounded-3xl outline-none shadow-none;
+}
+.main_bg {
+    @apply relative;
+}
+.main_sidenav {
+    @apply fixed right-0 top-0 bg-white rounded-tl-45px rounded-bl-45px p-10 w-6/12 h-full z-[999] overflow-y-scroll;
+}
+.main_bg::after {
+    content: '';
+    @apply bg-black/70 top-0 left-0 absolute w-full h-full block z-[1];
+}
+.icon_invert svg {
+    @apply fill-black;
+}
