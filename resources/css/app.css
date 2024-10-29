@@ -19,15 +19,54 @@ body {
     @apply font-sofia text-sm font-light text-white bg-blue-600 px-4 py-2.5 rounded-3xl outline-none shadow-none;
 }
 .main_bg {
-    @apply relative;
+    @apply relative min-h-screen h-full;
 }
 .main_sidenav {
     @apply fixed right-0 top-0 bg-white rounded-tl-45px rounded-bl-45px p-10 w-6/12 h-full z-[999] overflow-y-scroll;
 }
 .main_bg::after {
     content: '';
-    @apply bg-black/70 top-0 left-0 absolute w-full h-full block z-[1];
+    @apply bg-black/85 top-0 left-0 absolute w-full h-full block z-[1];
 }
 .icon_invert svg {
     @apply fill-black;
+}
+.main-text {
+    @apply font-dmsans text-white font-normal text-lg tracking-tight leading-7;
+}
+.s-main-btn {
+    @apply font-dmsans text-black font-extralight text-sm px-6 py-4 rounded-40px border-[1.5px] border-white hover:bg-white/60 duration-500;
+}
+.btn-large  {
+    @apply flex flex-row items-center;
+    span {
+        @apply border border-black rounded-full p-2 ml-4 duration-500;
+        svg {
+            @apply fill-black duration-500;
+        }
+    }
+}
+.btn-large:hover span {
+    @apply bg-mainhometwo border-white hover:text-white;
+}
+.btn-large:hover span svg {
+    @apply fill-white;
+}
+.btn-white {
+    @apply bg-white text-black py-3 px-6 rounded-full font-light flex w-fit items-center duration-500 font-dmsans;
+    svg {
+        @apply fill-black ml-1 h-6 duration-500;
+    }
+}
+.btn-white:hover svg {
+    @apply transition-all translate-x-2 duration-500;
+}
+.main-ade h1 {
+    @apply font-dmsans text-6xl font-bold tracking-normal uppercase;
+}
+.main-ade h2 {
+    @apply font-dmsans text-6xl font-light;
+}
+.main-ade h3 {
+    @apply font-dmsans text-2xl font-semibold;
 }

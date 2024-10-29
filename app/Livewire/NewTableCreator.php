@@ -58,8 +58,8 @@ class NewTableCreator extends Component
             foreach ($existingFields as $field) {
                 Field::create([
                     'record_id' => $newRecord->id,
-                    'field_name' => $field->field_name,
-                    'fiel_type' => $field->field_type,
+                    'field_name' => Str::slug($field->field_name, '-'),
+                    'field_type' => $field->field_type,
                     'field_value' => $field->field_value, // You can assign default values if needed
                 ]);
             }
@@ -73,7 +73,7 @@ class NewTableCreator extends Component
         foreach($c_records as $record) {
             Field::create([
                 'record_id' => $record->id,
-                'field_name' => $this->newField,
+                'field_name' => Str::slug($this->newField, '-'),
                 'field_type' => $this->typeField,
                 'field_value' => '',
             ]);
