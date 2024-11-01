@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/opruiming', function () {
+    return view('opruiming');
+});
 Route::get('/data', function () {
     return view('data'); // This is the Blade file where we will include the Livewire component
 });

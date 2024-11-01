@@ -9,7 +9,7 @@
                 </div>
                 <div class="w-1/12"></div>
                 <div class="w-4/12">
-                    <img class="h-full rounded-45px" src="{{asset('/storage/photos/mountain.png')}}"/>
+                    <img class="h-80 w-full object-cover object-center rounded-45px" src="{{asset($block->contact_image)}}"/>
                 </div>
                 <div class="w-1/12"></div>
             </div>

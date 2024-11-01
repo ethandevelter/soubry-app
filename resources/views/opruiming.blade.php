@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://use.typekit.net/nyj2ysl.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Fancybox CSS and JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
@@ -17,28 +18,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-    
 <body class="font-sofia">
-    <!-- Header -->
     <x-partials.header></x-partials.header>
     <main class="main-ade">
-        @foreach (table('home') as $item)
-            <section class="bg-gradient-to-b from-[#242424] to-[#D03630]">
-                <x-container>
-                    <x-home.hero :block="$item"></x-home.hero>
-                    <x-home.strengths :block="$item"></x-home.strengths>
-                </x-container>
-            </section>
-            <x-home.services :block="$item"></x-home.services>
-            <x-home.realisations :block="$item"></x-home.realisations>
-            <x-home.contact-us :block="$item"></x-home.contact-us>
-            <!-- Call-to-Action Section -->
-            <section class="py-12 bg-red-600 text-white text-center">
-            <div class="container mx-auto">
-                <a href="#" class="bg-white text-red-600 py-3 px-6 rounded-full font-semibold">Ontvang uw gratis offerte →</a>
-            </div>
-            </section>
-        @endforeach
+        <x-opruiming.opruiming></x-opruiming.opruiming>
     </main>
     <x-partials.footer></x-partials.footer>
 </body>

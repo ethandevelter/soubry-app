@@ -26,6 +26,12 @@ export default {
                 '40px': '40px',
                 '45px': '45px',
             },
+            colors: {
+                'mainone': '#FF9D00',
+                'maintwo': '#FF00D8',
+                'mainhomeone': '#242424',
+                'mainhometwo': '#D03630',
+            },
             backgroundColor: {
                 'mainone': '#FF9D00',
                 'maintwo': '#FF00D8',
