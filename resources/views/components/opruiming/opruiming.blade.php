@@ -9,7 +9,7 @@
 </section>
 <div class="bg-gray-50 font-sans">
     <!-- Specialisatie Section -->
-    <section class="py-12 bg-gray-100">
+    <section class="py-16 bg-gray-100">
         <x-container>
             <div class="flex flex-wrap justify-between items-start">
                 <!-- Left Column - Specialisaties -->
@@ -69,7 +69,7 @@
     </section>
 
     <!-- Our Process Section -->
-    <section class="py-12">
+    <section>
         <x-container>
             <h2 class="text-black text-center my-24">{{$opruiming->third_title}}</h2>
             <div class="flex flex-wrap justify-center items-start -mr-6 mb-14">
@@ -126,26 +126,17 @@
         <x-container>
             <h2 class="text-black text-center my-24">{{$opruiming->fourth_title}}</h2>
             <div class="flex flex-wrap -mr-6">
-                <div class="w-1/4 pr-6">
-                    <a data-fancybox="gallery" href="http://127.0.0.1:8000/storage/photos/d38611b259d846f5a9c4be5272779d9d.jpeg">
-                        <img class="h-64 w-full object-cover object-center rounded-40px hover:scale-105 duration-500" src="http://127.0.0.1:8000/storage/photos/d38611b259d846f5a9c4be5272779d9d.jpeg">
-                    </a>
-                </div>
-                <div class="w-1/4 pr-6">
-                    <a data-fancybox="gallery" href="http://127.0.0.1:8000/storage/photos/milivoj-kuhar-te48tpzdcu8-unsplash.jpg">
-                        <img class="h-64 w-full object-cover object-center rounded-40px hover:scale-105 duration-500" src="http://127.0.0.1:8000/storage/photos/milivoj-kuhar-te48tpzdcu8-unsplash.jpg">
-                    </a>
-                </div>
-                <div class="w-1/4 pr-6">
-                    <a data-fancybox="gallery" href="http://127.0.0.1:8000/storage/photos/Realisatie_Three.jpg">
-                        <img class="h-64 w-full object-cover object-center rounded-40px hover:scale-105 duration-500" src="http://127.0.0.1:8000/storage/photos/Realisatie_Three.jpg">
-                    </a>
-                </div>
-                <div class="w-1/4 pr-6">
-                    <a data-fancybox="gallery" href="http://127.0.0.1:8000/storage/photos/Realisatie_Two.jpg">
-                        <img class="h-64 w-full object-cover object-center rounded-40px hover:scale-105 duration-500" src="http://127.0.0.1:8000/storage/photos/Realisatie_Two.jpg">
-                    </a>
-                </div>
+                @php
+                    $imagePaths = json_decode($opruiming->images);
+                    shuffle($imagePaths);
+                @endphp
+                @foreach ($imagePaths as $img)
+                    <div class="w-1/4 pr-6 mb-6">
+                        <a data-fancybox="gallery" href="{{asset($img)}}">
+                            <img class="h-64 w-full object-cover object-center rounded-40px hover:scale-105 duration-500" src="{{asset($img)}}">
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </x-container>
     </section>

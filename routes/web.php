@@ -2,15 +2,15 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/opruiming', function () {
-    return view('opruiming');
-});
-Route::get('/data', function () {
-    return view('data'); // This is the Blade file where we will include the Livewire component
-});
+/*------ MAIN VIEWS------*/
+Route::get('/', function () {return view('welcome');});
+Route::get('/opruiming', function () {return view('opruiming');});
+Route::get('/opruiming-inboedel', function () {return view('inboedel');});
+Route::get('/opruiming-na-overlijden', function () {return view('overlijden');});
+Route::get('/opruiming-woning', function () {return view('woning');});
+Route::get('/opruiming-tuin', function () {return view('tuin');});
+Route::get('/faq', function () {return view('faq');});
+Route::get('/data', function () {return view('data');});
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

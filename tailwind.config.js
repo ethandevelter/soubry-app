@@ -50,6 +50,9 @@ export default {
             minHeight: {
                 'hero': 'calc(100% - 88px)',
             },
+            zIndex: {
+                '999': '999',
+            },
         },
     },
 
