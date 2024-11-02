@@ -1,7 +1,7 @@
 <div class="flex flex-row w-full relative min-h-screen items-center justify-center">
     <div class="w-6/12">
         <h1 class="text-white">
-            {{($block->intro_title)}}
+            {!! $block->intro_title !!}
         </h1>
         <div class="font-dmsans text-white main-text pt-5 pb-20">
             {{$block->intro_text}}

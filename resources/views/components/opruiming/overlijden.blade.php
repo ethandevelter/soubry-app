@@ -21,107 +21,42 @@
                 <!-- Right Columns - Opruiming Options -->
                 <div class="w-full md:w-7/12 flex flex-wrap space-y-6 md:space-y-0">
                     <!-- Opruiming inboedel -->
-                    <div class="w-full md:w-1/2 mb-12">
-                        <h3 class="text-xl font-semibold text-mainhometwo">Opruiming inboedel</h3>
-                        <ul class="mt-4 list-disc list-inside space-y-1">
-                            <li>Volledige inboedels</li>
-                            <li>Kelders</li>
-                            <li>Schuren</li>
-                            <li>Magazijnen</li>
-                        </ul>
-                    </div>
-
-                    <!-- Opruimen na overlijden -->
-                    <div class="w-full md:w-1/2 mb-12">
-                        <h3 class="text-xl font-semibold text-mainhometwo">Opruimen na overlijden</h3>
-                        <ul class="mt-4 list-disc list-inside space-y-1">
-                            <li>Inboedel leegmaken</li>
-                            <li>Garage leegmaken</li>
-                            <li>Decoratiestukken opruimen</li>
-                            <li>Grotere spullen opruimen (Rekken, kasten,...)</li>
-                        </ul>
-                    </div>
-
-                    <!-- Opruimen van woningen -->
-                    <div class="w-full md:w-1/2">
-                        <h3 class="text-xl font-semibold text-mainhometwo">Opruimen van woningen</h3>
-                        <ul class="mt-4 list-disc list-inside space-y-1">
-                            <li>Algemene opruiming woning</li>
-                            <li>Opkuis van garage</li>
-                            <li>Kleine reparatie of sloopwerken</li>
-                            <li>Ontsmetten, ontgeuren, schilderen</li>
-                        </ul>
-                    </div>
-
-                    <!-- Opruimen van tuinen -->
-                    <div class="w-full md:w-1/2">
-                        <h3 class="text-xl font-semibold text-mainhometwo">Opruimen van tuinen</h3>
-                        <ul class="mt-4 list-disc list-inside space-y-1">
-                            <li>Opruimen van de tuin</li>
-                            <li>Snoeien van verwilderde tuin</li>
-                            <li>Nivelleren van bodem</li>
-                        </ul>
-                    </div>
-
+                    @php
+                        $records = table('opruimingen');
+                        // Separate the matching and non-matching records
+                        $sortedRecords = $records->sortByDesc(fn($cat) => $cat->cat === $overlijden->slug);
+                    @endphp
+                    @foreach ($sortedRecords as $cat)
+                        <div class="w-full md:w-1/2 mb-12">
+                            <h3 class="text-xl @if($overlijden->slug == $cat->cat) text-mainhomeone font-semibold @else text-mainhometwo font-medium @endif mb-4">{{ $cat->title }}</h3>
+                            <div class="list-disc list-inside space-y-1">
+                                {!! $cat->list !!}
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
+            </div>
+            <div class="flex flex-row pt-32">
+                <div class="w-8/12 text-black main-text !text-base"> {!! $overlijden->extra_text !!}</div>
+                <div class="w-1/12"></div>
+                <section class="w-3/12 bg-gradient-to-b to-[#242424] from-[#D03630] rounded-40px h-fit">
+                    <div class="mx-auto max-w-6xl px-6">
+                        <div class="py-10">
+                            <div class="flex flex-col">
+                                <div class="w-full">
+                                    <h3 class="text-white pb-7">Contacteer ons</h3>
+                                    <div class="main-text !text-sm text-white pb-7">Zowel voor kleine als voor grote inboedelopruimingen kunt u terecht bij opruimingsdienst Soubry Kenny VOF. Hij verplaatst zich over heel West-Vlaanderen! &nbsp;</div>
+                                    <a class="btn-white">Contact <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M694-466H212v-28h482L460-728l20-20 268 268-268 268-20-20 234-234Z"></path></svg></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </x-container>
     </section>
-
     <!-- Our Process Section -->
-    <section>
-        <x-container>
-            <h2 class="text-black text-center my-24">{{$overlijden->third_title}}</h2>
-            <div class="flex flex-wrap justify-center items-start -mr-6 mb-14">
-                <!-- Step 1 -->
-                <div class="md:w-1/3 pr-6">
-                    <div class="w-full bg-red-500 text-white p-10 rounded-40px mb-4 md:mb-0 text-left">
-                        <p class="!font-dmsans text-sm uppercase font-medium tracking-widest">Stap 1</p>
-                        <h3 class="!font-dmsans text-2xl font-bold mt-2">Bezoek</h3>
-                        <div class="font-dmsans text-base text-white font-light mt-4">
-                            Wij komen langs om de offerte op te maken en uniek, in tegenstelling tot vele collega's, wij brengen waardevolle spullen in vermindering op de kostprijs.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="md:w-1/3 pr-6">
-                    <div class="w-full bg-white text-gray-800 p-10 rounded-40px border border-gray-200 mb-4 md:mb-0">
-                        <h3 class="text-sm font-semibold uppercase text-red-600">Stap 2</h3>
-                        <h4 class="text-xl font-bold mt-2">Offerte op maat</h4>
-                        <div class="mt-4">
-                            U ontvangt de offerte binnen de 24 uur. Deze offerte is vrijblijvend!
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="md:w-1/3 pr-6">
-                    <div class="w-full bg-white text-gray-800 p-10 rounded-40px border border-gray-200 mb-4 md:mb-0">
-                        <h3 class="text-sm font-semibold uppercase text-red-600">Stap 3</h3>
-                        <h4 class="text-xl font-bold mt-2">Goedkeuring</h4>
-                        <div class="mt-4">
-                            Na goedkeuring wordt de datum afgesproken voor de opruiming van de inboedel, ten vroegste binnen 2 weken na goedkeuring. U kan kiezen of de woning volledig moet gekuist worden of niet.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="border-dashed border border-mainhometwo w-full"/>
-            <!-- Arrow Icons -->
-            <div class="flex justify-center items-center space-x-6 w-full -mt-7">
-                <div class="flex items-center justify-center w-1/3">
-                    <span class="material-icons text-mainhometwo w-14 h-14 border border-mainhometwo bg-gray-50 rounded-full flex items-center justify-center">arrow_forward</span>
-                </div>
-                <div class="flex items-center justify-center w-1/3">
-                    <span class="material-icons text-mainhometwo w-14 h-14 border border-mainhometwo bg-gray-50 rounded-full flex items-center justify-center">arrow_forward</span>
-                </div>
-                <div class="flex items-center justify-center w-1/3">
-                    <span class="material-icons text-mainhometwo w-14 h-14 border border-mainhometwo bg-gray-50 rounded-full flex items-center justify-center">check</span>
-                </div>
-            </div>
-        </x-container>
-    </section>
+    <x-steps :block="$overlijden"></x-steps>
     <section class="py-20">
         <x-container>
             <h2 class="text-black text-center my-24">{{$overlijden->fourth_title}}</h2>

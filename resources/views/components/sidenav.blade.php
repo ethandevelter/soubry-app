@@ -16,8 +16,10 @@
             @foreach($this->fields->where('record_id', $record->id) as $fielding)
                 <div class="flex flex-col relative mb-2">
                     <span class="text-black text-12px">{{$fielding->field_name}} - {{$fielding->field_type}}</span>
-                    @if($fielding->field_type != "image")
+                    @if($fielding->field_type != "image" && $fielding->field_type != "text")
                         <input class="main_input alt" wire:model="field.{{$fielding->id}}" type="text"/>
+                    @elseif($fielding->field_type == "text")
+                        @livewire('text-editor', ['item' => $fielding], key('text-editor'.$fielding->id))
                     @else
                         <div class="relative w-full">
                             <input class="main_input !w-full alt" wire:model="fileUploads.{{$fielding->id}}" type="file" multiple/>

@@ -70,16 +70,16 @@ body {
 .btn-white:hover svg {
     @apply transition-all translate-x-2 duration-500;
 }
-.main-ade h1 {
+.main-ade h1, .t-layout h1 {
     @apply font-dmsans text-6xl font-bold tracking-normal uppercase;
 }
 .main-ade h1.alt {
     @apply !font-dmsans !text-6xl !font-extralight z-10 normal-case text-white;
 }
-.main-ade h2 {
+.main-ade h2, .t-layout h2 {
     @apply font-dmsans text-6xl font-light;
 }
-.main-ade h3 {
+.main-ade h3, .t-layout h3 {
     @apply font-dmsans text-2xl font-semibold;
 }
 .hero-overlay {
@@ -88,4 +88,10 @@ body {
 .hero-overlay::after {
     content: '';
     @apply absolute top-0 left-0 w-full h-full block bg-gradient-to-b from-[#242424] to-[#D03630] opacity-75;
+}
+.t-layout ul, .main-ade ul {
+    @apply list-disc list-outside pl-3.5;
+}
+.t-layout ol, .main-ade ol {
+    @apply list-decimal list-outside pl-3.5;
 }
