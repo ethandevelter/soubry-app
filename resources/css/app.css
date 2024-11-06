@@ -12,6 +12,9 @@ body {
 .main_input {
     @apply font-sofia text-sm font-light text-black bg-white px-4 py-2.5 rounded-3xl border-none outline-none shadow-none;
 }
+.main_checkbox {
+    @apply w-4 h-4 mr-2 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+}
 .main_input.alt {
     border: 1px solid rgba(188, 187, 187, 0.671);
 }
@@ -81,6 +84,17 @@ body {
 }
 .main-ade h3, .t-layout h3 {
     @apply font-dmsans text-2xl font-semibold;
+}
+.main-ade .contact-info {
+    div {
+        @apply mb-4;
+    }
+    svg {
+        @apply mr-1.5;
+    }
+}
+.main-ade input[type="text"], .main-ade textarea, .main-ade select {
+    @apply font-dmsans text-base font-light rounded-[30px] px-6 py-3 border border-black bg-transparent;
 }
 .hero-overlay {
     @apply relative;

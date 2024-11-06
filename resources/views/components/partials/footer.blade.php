@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+@endphp
+@livewire('cookie-banner')
 <footer class="bg-white pt-10 border-t border-gray-300">
     <div class="container mx-auto px-4 flex lg:flex-row flex-col lg:justify-between lg:items-start">
         <!-- Left Section -->
@@ -25,16 +29,16 @@
         <!-- Center Section -->
         <div class="flex flex-row w-8/12">
             <div class="flex flex-col mb-6 lg:mb-0 lg:mx-8">
-                <h4 class="font-semibold text-gray-800 mb-2">Navigatie</h4>
+                <h4 class="font-semibold text-gray-800 mb-2">Ontdek</h4>
                 <ul class="text-sm space-y-2">
-                    <li><a href="#" class="text-red-600">Home</a></li>
-                    <li><a href="#" class="text-gray-800">Opruimingen</a></li>
-                    <li><a href="#" class="text-gray-800">Verhuizingen</a></li>
-                    <li><a href="#" class="text-gray-800">Poetsdienst</a></li>
-                    <li><a href="#" class="text-gray-800">Overige diensten</a></li>
+                    <li><a href="/" class="text-red-600">Home</a></li>
+                    <li><a href="/opruimingen" class="text-gray-800">Opruimingen</a></li>
+                    <li><a href="/verhuizingen" class="text-gray-800">Verhuizingen</a></li>
+                    <li><a href="https://soubry-cleaning.be/" target="_blank" class="text-gray-800">Poetsdienst</a></li>
+                    <li><a href="/overige-diensten" class="text-gray-800">Overige diensten</a></li>
+                    <li><a href="/contact" class="text-gray-800">Contact</a></li>
                 </ul>
             </div>
-
             <!-- Right Section -->
             <div class="flex flex-col">
                 <h4 class="font-semibold text-gray-800 mb-2">Contact</h4>
@@ -43,8 +47,13 @@
             </div>
         </div>
     </div>
-
     <div class="container mx-auto px-4 mt-8 text-center text-xs text-gray-600 pb-2">
-        <p>Copyright © 2024 Soubry Kenny | All Rights Reserved | <a href="#" class="hover:underline">Algemene voorwaarden</a> | <a href="#" class="hover:underline">Privacy Policy</a></p>
+        <p>Copyright © {{Carbon::now()->year}} Soubry Kenny | <a href="/privacy-policy" class="hover:underline">Privacy Policy</a></p>
+    </div>
+    <div class="bg-mainhometwo flex flex-row items-center justify-center mx-auto py-2">
+        <a href="https://www.adalace.be" target="_blank" class="text-white font-light text-sm pr-1 pt-0.5">Site by</a>
+        <span>
+            <a href="https://www.adalace.be" target="_blank""><img class="h-4 object-contain" src="{{asset('/storage/photos/Adalace_White.svg')}}"/></a>
+        </span>
     </div>
 </footer>

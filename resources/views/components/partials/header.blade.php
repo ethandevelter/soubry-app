@@ -1,7 +1,9 @@
 <header class="bg-white shadow-lg {{--fixed top-0 left-0 w-full z-999--}}">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
         <div class="flex items-center space-x-4">
-            <img src="{{asset('/storage/photos/Logo Soubry Kenny.png')}}" alt="Soubry Kenny Logo" class="h-14">
+            <a href="/">
+                <img src="{{asset('/storage/photos/Logo Soubry Kenny.png')}}" alt="Soubry Kenny Logo" class="h-14">
+            </a>
         </div>
         <nav class="hidden md:flex ml-auto items-end justify-end">
             <ul class="md:flex ml-auto items-end justify-end space-x-6 mr-4">
@@ -24,11 +26,11 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#" class="text-gray-700">Verhuizingen</a></li>
-                <li><a href="#" class="text-gray-700">Poetsdienst</a></li>
-                <li><a href="#" class="text-gray-700">Overige diensten</a></li>
+                <li><a href="/verhuizingen" class="text-gray-700">Verhuizingen</a></li>
+                <li><a href="https://soubry-cleaning.be/" target="_blank" class="text-gray-700">Poetsdienst</a></li>
+                <li><a href="/overige-diensten" class="text-gray-700">Overige diensten</a></li>
             </ul>
         </nav>
-        <a href="#" class="bg-red-600 text-white py-2 px-4 rounded-full">Contact</a>
+        <a href="/contact" class="bg-red-600 text-white py-2 px-4 rounded-full">Contact</a>
     </div>
 </header>

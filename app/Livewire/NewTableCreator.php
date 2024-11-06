@@ -94,7 +94,7 @@ class NewTableCreator extends Component
 
                     foreach ($this->fileUploads[$field->id] as $file) {
                         $this->validate([
-                            'fileUploads.' . $field->id . '.*' => 'image|max:1024', // 1MB Max per image
+                            'fileUploads.' . $field->id . '.*' => 'image|max:1536', // 1.5MB Max per image
                         ]);
 
                         // Store each uploaded file
@@ -123,7 +123,7 @@ class NewTableCreator extends Component
                 } else {
                     // Handle single file upload directly (not in an array)
                     $this->validate([
-                        'fileUploads.' . $field->id => 'image|max:1024', // 1MB Max
+                        'fileUploads.' . $field->id => 'image|max:1536', // 1.5MB Max
                     ]);
 
                     // Store the uploaded file
@@ -152,9 +152,6 @@ class NewTableCreator extends Component
         // Refresh data for display
         $this->showItems();
     }
-
-
-
     public function showItems()
     {
         $this->tables = Table::all();

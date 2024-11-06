@@ -2,7 +2,7 @@
     $overige = table('overige')->first();
 @endphp
 <section class="bg-gray-50">
-    <div class="relative flex flex-col items-center justify-center text-center py-44 bg-cover bg-center hero-overlay" style="background-image : url({{asset('storage/photos/Afbraakwerken.png')}})">
+    <div class="relative flex flex-col items-center justify-center text-center py-44 bg-cover bg-center hero-overlay min-h-60vh" style="background-image : url({{asset($overige->hero_image)}})">
         <h1 class="alt">{{$overige->intro_title}}</h1>
         <div class="mt-6 max-w-lg mx-auto main-text text-white z-10 !font-extralight">{{$overige->intro_text}}</div>
     </div>
@@ -21,20 +21,30 @@
                 <!-- Right Columns - Opruiming Options -->
                 <div class="w-full md:w-7/12 flex flex-wrap space-y-6 md:space-y-0">
                     <!-- Opruiming inboedel -->
-                    @php
-                        $records = table('opruimingen');
-                        // Separate the matching and non-matching records
-                        $sortedRecords = $records->sortByDesc(fn($cat) => $cat->cat === $overige->slug);
-                    @endphp
-                    @foreach ($sortedRecords as $cat)
-                        <div class="w-full md:w-1/2 mb-12">
-                            <h3 class="text-xl @if($overige->slug == $cat->cat) text-mainhomeone font-semibold @else text-mainhometwo font-medium @endif mb-4">{{ $cat->title }}</h3>
-                            <div class="list-disc list-inside space-y-1">
-                                {!! $cat->list !!}
+                    <div class="w-full md:w-1/2 mb-12">
+                        <h3 class="text-xl text-mainhomeone font-semibold mb-4">{{ $overige->opsomming_title }}</h3>
+                        <div class="list-disc list-inside space-y-1">
+                            {!! $overige->opsomming_text !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-row pt-32">
+                <div class="w-8/12 text-black main-text !text-base">{!! $overige->extra_text !!}</div>
+                <div class="w-1/12"></div>
+                <section class="w-3/12 bg-gradient-to-b to-[#242424] from-[#D03630] rounded-40px h-fit">
+                    <div class="mx-auto max-w-6xl px-6">
+                        <div class="py-10">
+                            <div class="flex flex-col">
+                                <div class="w-full">
+                                    <h3 class="text-white pb-7">Contacteer ons</h3>
+                                    <div class="main-text !text-sm text-white pb-7">Zowel voor kleine als voor grote inboedelopruimingen kunt u terecht bij opruimingsdienst Soubry Kenny VOF. Hij verplaatst zich over heel West-Vlaanderen! &nbsp;</div>
+                                    <a class="btn-white">Contact <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M694-466H212v-28h482L460-728l20-20 268 268-268 268-20-20 234-234Z"></path></svg></span></a>
+                                </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                </section>
             </div>
         </x-container>
     </section>

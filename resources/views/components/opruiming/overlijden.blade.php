@@ -2,7 +2,7 @@
     $overlijden = table('overlijdenpage')->first();
 @endphp
 <section class="bg-gray-50">
-    <div class="relative flex flex-col items-center justify-center text-center py-44 bg-cover bg-center hero-overlay" style="background-image : url({{asset('storage/photos/Afbraakwerken.png')}})">
+    <div class="relative flex flex-col items-center justify-center text-center py-44 bg-cover bg-center hero-overlay min-h-60vh" style="background-image : url({{asset($overlijden->hero_image)}})">
         <h1 class="alt">{{$overlijden->intro_title}}</h1>
         <div class="mt-6 max-w-lg mx-auto main-text text-white z-10 !font-extralight">{{$overlijden->intro_text}}</div>
     </div>

@@ -37,6 +37,7 @@ export default {
                 'maintwo': '#FF00D8',
                 'mainhomeone': '#242424',
                 'mainhometwo': '#D03630',
+                'ade': '#070A46',
             },
             flexBasis: {
                 "1/3-gap-4": "calc(33.3% - (2/3 * 1rem))"
@@ -49,6 +50,7 @@ export default {
             },
             minHeight: {
                 'hero': 'calc(100% - 88px)',
+                '60vh': '60vh',
             },
             zIndex: {
                 '999': '999',
