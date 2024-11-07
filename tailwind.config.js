@@ -55,6 +55,30 @@ export default {
             zIndex: {
                 '999': '999',
             },
+            animation: {
+                'fade-in-left': 'fadeInLeft 0.5s ease-out forwards',
+                'fade-in-right': 'fadeInRight 0.5s ease-out forwards',
+                'fade-in-top': 'fadeInTop 0.5s ease-out forwards',
+                'fade-in-bottom': 'fadeInBottom 0.5s ease-out forwards',
+              },
+              keyframes: {
+                fadeInLeft: {
+                  '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                  '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                fadeInRight: {
+                  '0%': { opacity: '0', transform: 'translateX(50px)' },
+                  '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                fadeInTop: {
+                  '0%': { opacity: '0', transform: 'translateY(-50px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+                fadeInBottom: {
+                  '0%': { opacity: '0', transform: 'translateY(50px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+              },
         },
     },
 

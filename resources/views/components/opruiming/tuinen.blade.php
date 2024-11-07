@@ -15,8 +15,8 @@
                 <!-- Left Column - Specialisaties -->
                 <div class="w-full md:w-5/12 mb-6 md:mb-0">
                     <h2 class="text-black mb-4">{{$tuin->second_title}}</h2>
-                    <div class="main-text !text-base text-black mb-4 w-9/12">{{$tuin->second_text}}</div>
-                    <a class="btn-white alt">{{$tuin->button_text}} <span><x-map-arrowwatcher></x-map-arrowwatcher></span></a>
+                    <div class="main-text !text-base text-black mb-6 w-9/12">{{$tuin->second_text}}</div>
+                    <a href="/contact" class="btn-white alt">{{$tuin->button_text}} <span><x-map-arrowwatcher></x-map-arrowwatcher></span></a>
                 </div>
                 <!-- Right Columns - Opruiming Options -->
                 <div class="w-full md:w-7/12 flex flex-wrap space-y-6 md:space-y-0">

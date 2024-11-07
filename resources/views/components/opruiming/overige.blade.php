@@ -15,8 +15,8 @@
                 <!-- Left Column - Specialisaties -->
                 <div class="w-full md:w-5/12 mb-6 md:mb-0">
                     <h2 class="text-black mb-4">{{$overige->second_title}}</h2>
-                    <div class="main-text !text-base text-black mb-4 w-9/12">{!! $overige->second_text !!}</div>
-                    <a class="btn-white alt">{{$overige->button_text}} <span><x-map-arrowwatcher></x-map-arrowwatcher></span></a>
+                    <div class="main-text !text-base text-black mb-6 w-9/12">{!! $overige->second_text !!}</div>
+                    <a href="/contact" class="btn-white alt">{{$overige->button_text}} <span><x-map-arrowwatcher></x-map-arrowwatcher></span></a>
                 </div>
                 <!-- Right Columns - Opruiming Options -->
                 <div class="w-full md:w-7/12 flex flex-wrap space-y-6 md:space-y-0">
@@ -39,7 +39,7 @@
                                 <div class="w-full">
                                     <h3 class="text-white pb-7">Contacteer ons</h3>
                                     <div class="main-text !text-sm text-white pb-7">Zowel voor kleine als voor grote inboedelopruimingen kunt u terecht bij opruimingsdienst Soubry Kenny VOF. Hij verplaatst zich over heel West-Vlaanderen! &nbsp;</div>
-                                    <a class="btn-white">Contact <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M694-466H212v-28h482L460-728l20-20 268 268-268 268-20-20 234-234Z"></path></svg></span></a>
+                                    <a href="/contact" class="btn-white">Contact <span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M694-466H212v-28h482L460-728l20-20 268 268-268 268-20-20 234-234Z"></path></svg></span></a>
                                 </div>
                             </div>
                         </div>

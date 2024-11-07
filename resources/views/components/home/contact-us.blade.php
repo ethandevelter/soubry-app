@@ -5,7 +5,7 @@
                 <div class="w-6/12">
                     <h2 class="text-white pb-7">{{$block->five_title}}</h2>
                     <div class="main-text text-white pb-7">{{$block->five_text}} </div>
-                    <a class="btn-white">{{$block->five_button_text}} <span><x-map-arrowwatcher></x-map-arrowwatcher></span></a>
+                    <a href="/contact" class="btn-white">{{$block->five_button_text}} <span><x-map-arrowwatcher></x-map-arrowwatcher></span></a>
                 </div>
                 <div class="w-1/12"></div>
                 <div class="w-4/12">

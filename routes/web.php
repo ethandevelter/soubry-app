@@ -15,6 +15,7 @@ Route::get('/overige-diensten', function () {return view('overige');});
 Route::get('/contact', function () {return view('contact');});
 Route::get('/data', function () {return view('data');});
 Route::get('/privacy-policy', function () {return view('privacy-policy');});
+Route::get('/bedankt', function () {return view('bedankt');});
 Route::middleware(['auth:sanctum',
     config('jetstream.auth_session'),
     'verified',

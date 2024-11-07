@@ -8,7 +8,7 @@
         </div>
         <div class="flex flex-row space-x-4">
             <a class="s-main-btn bg-white" href="tel: {{$block->intro_button_one}}">{{$block->intro_button_one}}</a>
-            <a class="s-main-btn bg-transparent text-white" href="#offerte">{{$block->intro_button_two}}</a>
+            <a class="s-main-btn bg-transparent text-white" href="/contact">{{$block->intro_button_two}}</a>
         </div>
     </div>
     

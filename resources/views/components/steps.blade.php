@@ -1,6 +1,6 @@
 <section>
     <x-container>
-        <h2 class="text-black text-center my-24">{{$block->third_title}}</h2>
+        <h2 class="text-black text-center py-24">{{$block->third_title}}</h2>
         <div x-data="{
             maxHeight: 0,
             adjustHeights() {

@@ -1,4 +1,4 @@
-<div>
+<div id="contactform">
     <form wire:submit.prevent="submit" validate method="POST" autocomplete="off">
         @if($submitted)
             <div>Uw bericht werd verstuurd</div>

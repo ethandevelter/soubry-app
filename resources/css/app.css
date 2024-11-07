@@ -8,6 +8,7 @@
 body {
     font-family: "sofia-pro", 'sans-serif';
     letter-spacing: -0.8px;
+    scroll-behavior: smooth;
 }
 .main_input {
     @apply font-sofia text-sm font-light text-black bg-white px-4 py-2.5 rounded-3xl border-none outline-none shadow-none;
